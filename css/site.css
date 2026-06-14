@@ -118,14 +118,14 @@ body::after {
     linear-gradient(105deg, rgba(8,11,18,.94) 0%, rgba(8,11,18,.62) 38%, rgba(8,11,18,.12) 70%, rgba(8,11,18,.5) 100%),
     linear-gradient(to top, rgba(8,11,18,.96) 2%, rgba(8,11,18,0) 46%);
 }
-.hero-inner { position: relative; z-index: 3; width: 100%; max-width: var(--container); margin-inline: auto; padding: 0 var(--pad) clamp(40px, 7vw, 96px); color: var(--cream); }
+.hero-inner { position: relative; z-index: 3; width: 100%; max-width: var(--container); margin-inline: auto; padding: calc(var(--nav-h) + clamp(16px, 3vh, 40px)) var(--pad) clamp(40px, 7vw, 96px); color: var(--cream); }
 .hero-rail {
   position: absolute; left: clamp(10px, 2vw, 28px); top: 44%; z-index: 3; transform: rotate(180deg);
   writing-mode: vertical-rl; font-family: var(--font-cond); text-transform: uppercase; letter-spacing: .34em;
   font-size: .68rem; color: rgba(245,242,234,.5); display: flex; align-items: center; gap: 16px;
 }
 .hero-rail::after { content: ''; height: 60px; width: 1px; background: rgba(245,242,234,.3); }
-.hero h1 { font-size: clamp(3.4rem, 12.5vw, 11rem); color: var(--cream); margin: 18px 0 0; max-width: 14ch; }
+.hero h1 { font-size: clamp(2.6rem, min(11vw, 19vh), 9.5rem); color: var(--cream); margin: 18px 0 0; max-width: 14ch; }
 .hero h1 em { font-style: normal; color: var(--gold); }
 .hero h1 .stroke { -webkit-text-stroke: 2px var(--cream); color: transparent; }
 .hero-sub { font-family: var(--font-body); font-size: clamp(1rem, 1.5vw, 1.2rem); color: rgba(245,242,234,.82); max-width: 46ch; margin-top: 26px; line-height: 1.55; }
