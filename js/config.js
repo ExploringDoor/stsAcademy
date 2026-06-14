@@ -39,8 +39,9 @@
     contact: {
       owner: 'Amanda Philips',
       ownerRole: 'Owner & Director',
-      email: 'aphilips3409@gmail.com',
-      facebook: 'https://www.facebook.com/profile.php?id=100089400000000', // placeholder; academy page
+      email: 'smalltownsportsacademy@gmail.com',
+      phone: '(254) 964-1579',
+      facebook: 'https://www.facebook.com/profile.php?id=61570848586274',
       address: '1907 E Washington St, Stephenville, TX 76401',
       hoursNote: 'By appointment & posted session times — see the schedule for each program.'
     },

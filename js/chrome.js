@@ -15,6 +15,7 @@
     pin:      '<path d="M12 21s7-6.3 7-11a7 7 0 1 0-14 0c0 4.7 7 11 7 11Z"/><circle cx="12" cy="10" r="2.6"/>',
     clock:    '<circle cx="12" cy="12" r="9"/><path d="M12 7.5V12l3 2"/>',
     mail:     '<rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 6.5 8.5 6 8.5-6"/>',
+    phone:    '<path d="M21 16.9v2.6a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 1.1 3.7 2 2 0 0 1 3.1 1.5h2.6a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L6.8 9.3a16 16 0 0 0 6 6l1.2-1.1a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/>',
     star:     '<path d="m12 3 2.6 5.7 6.2.7-4.6 4.2 1.3 6.1L12 16.8 6.5 19.7l1.3-6.1L3.2 9.4l6.2-.7Z"/>',
     arrow:    '<path d="M5 12h14M13 6l6 6-6 6"/>',
     bolt:     '<path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z"/>',
@@ -90,6 +91,7 @@
         '<div class="footer-col"><h5>Programs</h5>' + progLinks + '</div>' +
         '<div class="footer-col"><h5>Visit & Contact</h5>' +
           '<p>' + (c.address || '') + '</p>' +
+          (c.phone ? '<a href="tel:+1' + c.phone.replace(/\D/g, '') + '">' + c.phone + '</a>' : '') +
           '<a href="mailto:' + (c.email || '') + '">' + (c.email || '') + '</a>' +
           '<p style="margin-top:14px">' + (c.owner || '') + '<br><span style="color:rgba(255,255,255,.45)">' + (c.ownerRole || '') + '</span></p>' +
           '<a class="btn btn-primary btn-sm" style="margin-top:8px" href="' + (S.bookUrl || '#') + '" target="_blank" rel="noopener">Register Now</a>' +

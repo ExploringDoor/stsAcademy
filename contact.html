@@ -93,6 +93,7 @@
   // A) LEFT — info rows built from STSA.contact
   var rows = [
     ['users', 'Owner & Director', c.owner + ' &mdash; ' + c.ownerRole],
+    ['phone', 'Call or Text', '<a href="tel:+1' + c.phone.replace(/\D/g, '') + '">' + c.phone + '</a>'],
     ['mail', 'Email', '<a href="mailto:' + c.email + '">' + c.email + '</a>'],
     ['pin', 'Visit', c.address + '<a href="' + mapsLink + '" target="_blank" rel="noopener">Get Directions</a>'],
     ['clock', 'Hours', c.hoursNote]

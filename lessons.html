@@ -148,6 +148,9 @@
   // Contact line under the inquiry copy
   var c = S.contact;
   document.getElementById('inqContact').innerHTML =
+    (c.phone ? '<div class="inforow" style="border:none;padding:0 0 14px"><div class="ii">' + icon('phone') + '</div>' +
+      '<div><h4 style="color:var(--cream)">Call or text</h4>' +
+      '<a href="tel:+1' + c.phone.replace(/\D/g, '') + '" style="color:var(--gold)">' + c.phone + '</a></div></div>' : '') +
     '<div class="inforow" style="border:none;padding:0"><div class="ii">' + icon('mail') + '</div>' +
     '<div><h4 style="color:var(--cream)">Prefer email?</h4>' +
     '<a href="mailto:' + c.email + '" style="color:var(--gold)">' + c.email + '</a></div></div>';
