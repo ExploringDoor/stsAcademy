@@ -25,6 +25,9 @@
     bookUrl: BOOK + '/offerings',
     book: BOOK,
 
+    /* ── Sister organization (the tournament side of the family) ────── */
+    sister: { name: 'Small Town Select Tournaments', url: 'https://www.ststournaments.com/' },
+
     /* ── Live data (UpperHand public API — CORS-open, no key) ───────── */
     upperhand: {
       api: 'https://api.upperhand.io/api',

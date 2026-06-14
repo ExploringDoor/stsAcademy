@@ -80,6 +80,7 @@
             '<a href="' + (c.facebook || '#') + '" target="_blank" rel="noopener" aria-label="Facebook">' + icon('facebook') + '</a>' +
             '<a href="mailto:' + (c.email || '') + '" aria-label="Email">' + icon('mail') + '</a>' +
           '</div>' +
+          (S.sister ? '<a href="' + S.sister.url + '" target="_blank" rel="noopener" style="display:inline-block;margin-top:20px;font-family:var(--font-cond);text-transform:uppercase;letter-spacing:.07em;font-size:.72rem;color:var(--gold)">Part of the family — visit ' + S.sister.name + ' →</a>' : '') +
         '</div>' +
         '<div class="footer-col"><h5>Explore</h5>' +
           '<a href="programs.html">Programs</a><a href="schedule.html">Schedule</a>' +

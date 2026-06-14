@@ -5,3 +5,6 @@ node_modules/
 .env.local
 # Internal raw data scraped from UpperHand (contains non-public membership/staff detail) — keep out of any public repo
 data/raw-upperhand/
+
+# Raw photo drop-zone (originals; optimized copies land in assets/img/)
+photos-drop/
