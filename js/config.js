@@ -48,7 +48,7 @@
 
     /* ── Headline stats (animate-counted on the home hero) ─────────── */
     stats: [
-      { n: 3,   label: 'Training Facilities' },
+      { n: 4,   label: 'Seasons a Year' },
       { n: 50,  suffix: '+', label: 'Coaches & Instructors' },
       { n: 12,  label: 'Age Groups Served' },
       { n: 2023, raw: true, label: 'Serving Since' }
@@ -105,13 +105,13 @@
         price: 30,
         priceNote: 'Per player',
         ages: 'All ages',
-        location: 'Goat Fields',
+        location: 'Small Town Sports Academy',
         days: 1,
         tagline: 'Walk into tryouts confident and prepared.',
         desc: 'A focused one-day session that runs players through exactly what select ' +
-              'and school tryouts evaluate — 60-yard times, infield/outfield reads, ' +
-              'arm strength, and live at-bats — with coaching on how to stand out.',
-        bullets: ['One-day intensive', 'Tryout-style stations', 'Held at Goat Fields', 'Coaching on what evaluators want'],
+              'and school tryouts evaluate — fielding reads, arm strength, hitting, ' +
+              'and live reps — with coaching on how to stand out.',
+        bullets: ['One-day intensive', 'Tryout-style stations', 'Small-group coaching', 'Coaching on what evaluators want'],
         url: BOOK + '/events/196662-tryout-prep-camp',
         featured: true
       }
@@ -156,29 +156,20 @@
     locations: [
       {
         name: 'Small Town Sports Academy',
-        role: 'Main Indoor Facility',
+        role: 'Indoor Training Facility',
         addr: '1907 E Washington St, Stephenville, TX 76401',
-        desc: 'Our home base — indoor cages, training turf, and the front office. ' +
-              'Host of the Monday Night Skills Clinic and Grand Slam Camp.',
-        amenities: ['Indoor batting cages', 'Training turf', 'Pro shop', 'Climate controlled'],
+        desc: 'Our home base in Stephenville — indoor batting cages and training turf ' +
+              'where our camps, clinics, and team training all happen.',
+        amenities: ['Indoor batting cages', 'Training turf', 'Pro shop on-site'],
         primary: true
-      },
-      {
-        name: 'Goat Fields',
-        role: 'Outdoor Fields',
-        addr: '1907 E Washington St, Stephenville, TX 76401',
-        desc: 'Our outdoor playing and tryout grounds, steps from the academy. ' +
-              'Home of the Tryout Prep Camp and live game work.',
-        amenities: ['Game-ready fields', 'Tryout stations', 'Open practice space']
-      },
-      {
-        name: 'West Stephenville Sox Facility',
-        role: 'West-Side Training',
-        addr: '6412 S US Hwy 67, Stephenville, TX 76401',
-        desc: 'Our west-side training facility supporting Sox team practices and ' +
-              'additional cage time.',
-        amenities: ['Additional cages', 'Team practice space', 'West-side convenience']
       }
+    ],
+
+    /* Indoor amenities (shown on the Facility page) */
+    amenities: [
+      { icon: 'ball', title: 'Indoor Batting Cages', text: 'Hitting and pitching cages so the reps never stop — rain, heat, or shine.' },
+      { icon: 'target', title: 'Training Turf', text: 'Open turf for fielding, throwing, baserunning and small-group work.' },
+      { icon: 'star', title: 'Pro Shop', text: 'Apparel, equipment and season essentials available right on-site.' }
     ],
 
     /* ── Pro shop categories ───────────────────────────────────────── */
