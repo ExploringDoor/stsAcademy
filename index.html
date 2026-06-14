@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Small Town Sports Academy — Baseball & Softball Training · Stephenville, TX</title>
+<meta name="description" content="A year-round baseball & softball academy in Stephenville, Texas. Indoor cages, camps, weekly clinics, and team memberships for every age. Train like it matters." />
+<link rel="icon" href="assets/logo.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/site.css" />
+</head>
+<body data-page="home">
+<div id="site-nav"></div>
+
+<!-- ═══════════════ HERO ═══════════════ -->
+<header class="hero">
+  <div class="hero-img"><img src="assets/img/hero.jpg" alt="Pitcher delivering during a game" /></div>
+  <div class="hero-rail">Est. 2023 — Stephenville, Texas</div>
+  <div class="hero-inner">
+    <span class="kicker gold">Baseball &amp; Softball Academy</span>
+    <h1>Small-Town Grit.<br><em>Big-League Game.</em></h1>
+    <p class="hero-sub">A year-round training academy in Stephenville, Texas — indoor cages, camps, weekly clinics, and a team for every age and level.</p>
+    <div class="btn-row">
+      <a class="btn btn-gold btn-lg" href="programs.html">Explore Programs <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="btn btn-ghost-d btn-lg" href="memberships.html">Become a Member</a>
+    </div>
+  </div>
+  <div class="hero-scroll">Scroll<span class="line"></span></div>
+</header>
+
+<!-- ═══════════════ MARQUEE ═══════════════ -->
+<div class="marquee" aria-hidden="true"><div class="marquee-track" id="marquee"></div></div>
+
+<!-- ═══════════════ STATEMENT + PROGRAM ROWS ═══════════════ -->
+<section class="section">
+  <div class="wrap">
+    <div class="statement reveal">
+      <h2>We don't run a batting&nbsp;cage. We build <em>ballplayers</em> — one rep, one kid, one season at a time.</h2>
+      <div class="side">
+        <p>Small groups. Real coaching. A coach who knows your kid's swing and tracks their growth — not a crowded drop-in line. From first-time coach-pitch to high-school showcase, there's a path here.</p>
+        <a class="btn btn-ghost" href="about.html">Our Story</a>
+      </div>
+    </div>
+
+    <div class="eyebrow-row reveal" style="margin-top:90px">
+      <span class="kicker">02 — Now Enrolling</span>
+    </div>
+    <div class="progs reveal" id="progRows"></div>
+  </div>
+</section>
+
+<!-- ═══════════════ STAT BAND ═══════════════ -->
+<section class="section dark statband">
+  <div class="bg"><img src="assets/img/cage.jpg" alt="" /></div>
+  <div class="wrap">
+    <div class="eyebrow-row reveal"><span class="kicker on-dark">03 — By The Numbers</span></div>
+    <h2 class="reveal" style="font-size:clamp(2.2rem,5vw,4.2rem);max-width:16ch">Proof shows up<br>in the reps.</h2>
+    <div class="stat-grid" id="statGrid"></div>
+  </div>
+</section>
+
+<!-- ═══════════════ FACILITY ═══════════════ -->
+<section class="section facility">
+  <div class="bg"><img src="assets/img/field.jpg" alt="" /></div>
+  <div class="wrap">
+    <div class="eyebrow-row reveal"><span class="kicker on-dark">04 — The Facility</span></div>
+    <h2 class="reveal" style="color:var(--cream);font-size:clamp(2.2rem,5vw,4.4rem);max-width:18ch">Three places to train,<br>all in Stephenville.</h2>
+    <div class="loc-list reveal" id="locList"></div>
+  </div>
+</section>
+
+<!-- ═══════════════ COACHES ═══════════════ -->
+<section class="coachsec">
+  <div class="media reveal"><img src="assets/img/coach.jpg" alt="A coach instructing young players at a camp" /></div>
+  <div class="copy reveal d1">
+    <span class="kicker on-dark">05 — The Staff</span>
+    <h2>Coached by people<br>who know your kid.</h2>
+    <p id="coachBlurb"></p>
+    <div class="coach-names" id="coachNames"></div>
+    <div class="btn-row" style="margin-top:34px"><a class="btn btn-gold" href="coaches.html">Meet the Coaches</a></div>
+  </div>
+</section>
+
+<!-- ═══════════════ CTA ═══════════════ -->
+<section class="section cta">
+  <div class="bg"><img src="assets/img/cage.jpg" alt="" /></div>
+  <div class="wrap reveal">
+    <span class="kicker on-dark" style="justify-content:center;display:inline-flex">Get Started</span>
+    <h2 style="margin-top:18px">Your first <em>rep</em><br>starts this week.</h2>
+    <p>Browse open camps and clinics, grab a membership, or just come see the place. Registration takes about two minutes.</p>
+    <div class="btn-row">
+      <a class="btn btn-gold btn-lg" id="ctaRegister" href="#" target="_blank" rel="noopener">Register Now</a>
+      <a class="btn btn-ghost-d btn-lg" href="contact.html">Visit Us</a>
+    </div>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+
+<script src="js/config.js"></script>
+<script src="js/chrome.js"></script>
+<script>
+(function () {
+  var S = window.STSA, icon = window.icon;
+  var money = function (n) { return '$' + Number(n).toLocaleString(); };
+
+  // Marquee — content duplicated for a seamless loop
+  var words = ['Baseball', 'Softball', 'Camps', 'Clinics', 'Batting Cages', 'Year-Round Training', 'Stephenville TX'];
+  var run = words.map(function (w) { return '<span>' + w + '</span>'; }).join('');
+  document.getElementById('marquee').innerHTML = run + run;
+
+  // Program editorial rows
+  var imgs = ['coach', 'cage', 'field'];
+  document.getElementById('progRows').innerHTML = S.programs.map(function (p, i) {
+    var alt = p.altPrice ? ' · ' + money(p.altPrice) + ' ' + (p.altNote || '') : '';
+    return '<a class="prow" href="' + p.url + '" target="_blank" rel="noopener">' +
+      '<div class="pbg"><img src="assets/img/' + imgs[i % imgs.length] + '.jpg" alt=""/></div>' +
+      '<span class="pnum">0' + (i + 1) + '</span>' +
+      '<div class="pmain">' +
+        '<div class="pname">' + p.name + '</div>' +
+        '<div class="pmeta"><b>' + p.cat + '</b><span>Ages ' + p.ages + '</span><span>' + p.sport + '</span><span>' + p.location + '</span></div>' +
+        '<div class="pdesc">' + (p.desc || p.tagline) + '</div>' +
+      '</div>' +
+      '<div class="pright">' +
+        '<div class="pprice">' + money(p.price) + '<small>' + (p.priceNote || '') + alt + '</small></div>' +
+        '<span class="pgo">' + icon('arrow') + '</span>' +
+      '</div>' +
+    '</a>';
+  }).join('');
+
+  // Stats (chrome.js animates [data-count])
+  document.getElementById('statGrid').innerHTML = S.stats.map(function (s) {
+    return '<div class="s reveal"><div class="n" data-count="' + s.n + '"' +
+      (s.raw ? ' data-raw="1"' : '') + (s.suffix ? ' data-suffix="' + s.suffix + '"' : '') + '>0</div>' +
+      '<div class="l">' + s.label + '</div></div>';
+  }).join('');
+
+  // Facility rows
+  document.getElementById('locList').innerHTML = S.locations.map(function (l) {
+    return '<div class="loc-row' + (l.primary ? ' primary' : '') + '">' +
+      '<span class="tag">' + l.role + '</span>' +
+      '<div><div class="ln">' + l.name + '</div><div class="la">' + l.addr + '</div></div>' +
+      '<div class="lamen">' + (l.amenities || []).slice(0, 3).join(' · ') + '</div>' +
+    '</div>';
+  }).join('');
+
+  // Coaches
+  document.getElementById('coachBlurb').textContent = S.coachNote;
+  var names = [{ n: (S.leadership[0] || {}).name, lead: true }].concat(
+    S.instructors.map(function (n) { return { n: n }; })
+  );
+  document.getElementById('coachNames').innerHTML = names.filter(function (x) { return x.n; }).map(function (x) {
+    return '<span' + (x.lead ? ' class="lead"' : '') + '>' + x.n + '</span>';
+  }).join('');
+
+  // CTA register link
+  document.getElementById('ctaRegister').href = S.bookUrl;
+})();
+</script>
+</body>
+</html>

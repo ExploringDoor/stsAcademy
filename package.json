@@ -1,0 +1,10 @@
+{
+  "name": "sts-academy-site",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Small Town Sports Academy — baseball & softball training, camps, clinics, and memberships in Stephenville, TX.",
+  "engines": { "node": "20.x" },
+  "scripts": {
+    "dev": "npx serve -l 8013 ."
+  }
+}

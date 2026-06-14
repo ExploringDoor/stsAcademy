@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Contact & Visit — Small Town Sports Academy · Stephenville, TX</title>
+<meta name="description" content="Get in touch with Small Town Sports Academy in Stephenville, TX. Email us, find directions, see our hours, or register for camps, clinics, and memberships." />
+<link rel="icon" href="assets/logo.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/site.css" />
+</head>
+<body data-page="contact">
+<div id="site-nav"></div>
+
+<!-- PAGE HERO -->
+<header class="phero">
+  <div class="bg"><img src="assets/img/field.jpg" alt="" /></div>
+  <div class="wrap">
+    <nav class="breadcrumb"><a href="index.html">Home</a> / <span>Contact</span></nav>
+    <span class="kicker gold">Visit &amp; Register</span>
+    <h1>Get In <em>Touch</em></h1>
+    <p class="lead">Questions about a program, a membership, or just want to come see the place? We're easy to reach — and we'd love to meet your ballplayer.</p>
+    <div class="btn-row"><a class="btn btn-gold" id="heroReg" href="#" target="_blank" rel="noopener">Register Now</a></div>
+  </div>
+</header>
+
+<!-- A) CONTACT + FORM -->
+<section class="section">
+  <div class="wrap">
+    <div class="split2">
+      <div class="reveal" id="contactInfo"></div>
+      <div class="reveal">
+        <form class="form" id="contactForm">
+          <label for="cfName">Your Name</label>
+          <input id="cfName" type="text" placeholder="First and last name" required />
+          <label for="cfEmail">Email</label>
+          <input id="cfEmail" type="email" placeholder="you@example.com" required />
+          <label for="cfAge">Player Age <span style="color:rgba(245,242,234,.45)">— optional</span></label>
+          <input id="cfAge" type="text" placeholder="e.g. 10" />
+          <label for="cfMsg">Message</label>
+          <textarea id="cfMsg" placeholder="Tell us what you're looking for — a camp, a clinic, a membership, or a tour."></textarea>
+          <button class="btn btn-gold" type="submit">Send Message</button>
+          <p class="note">This opens your email app.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- B) MAP -->
+<section class="section">
+  <div class="wrap">
+    <div class="shead reveal">
+      <span class="kicker">Find Us</span>
+      <h2>Come see the place</h2>
+    </div>
+    <div class="mapframe reveal">
+      <iframe id="contactMap" src="" loading="lazy" title="Map to Small Town Sports Academy"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- C) CTA -->
+<section class="section cta">
+  <div class="bg"><img src="assets/img/coach.jpg" alt="" /></div>
+  <div class="wrap reveal">
+    <span class="kicker on-dark" style="justify-content:center;display:inline-flex">Get Started</span>
+    <h2 style="margin-top:18px">Your first <em>rep</em><br>starts this week.</h2>
+    <p>Browse open camps and clinics, grab a membership, or just stop by. Registration takes about two minutes.</p>
+    <div class="btn-row">
+      <a class="btn btn-gold btn-lg" id="ctaReg" href="#" target="_blank" rel="noopener">Register Now</a>
+      <a class="btn btn-ghost-d btn-lg" href="programs.html">Explore Programs</a>
+    </div>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+
+<script src="js/config.js"></script>
+<script src="js/chrome.js"></script>
+<script>
+(function () {
+  var S = window.STSA, icon = window.icon, c = S.contact;
+  var addr = c.address;
+  var mapsLink = 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(addr);
+
+  // Map embed — derive the query from STSA.contact.address (no hardcoded location)
+  var mapEl = document.getElementById('contactMap');
+  if (mapEl) mapEl.src = 'https://maps.google.com/maps?q=' + encodeURIComponent(addr) + '&z=14&output=embed';
+
+  // A) LEFT — info rows built from STSA.contact
+  var rows = [
+    ['users', 'Owner & Director', c.owner + ' &mdash; ' + c.ownerRole],
+    ['mail', 'Email', '<a href="mailto:' + c.email + '">' + c.email + '</a>'],
+    ['pin', 'Visit', c.address + '<a href="' + mapsLink + '" target="_blank" rel="noopener">Get Directions</a>'],
+    ['clock', 'Hours', c.hoursNote]
+  ];
+  document.getElementById('contactInfo').innerHTML = rows.map(function (r) {
+    return '<div class="inforow"><div class="ii">' + icon(r[0]) + '</div>' +
+      '<div><h4>' + r[1] + '</h4><p>' + r[2] + '</p></div></div>';
+  }).join('') +
+  '<div class="btn-row" style="margin-top:30px"><a class="btn btn-gold" id="infoReg" href="' + S.bookUrl + '" target="_blank" rel="noopener">Register / Browse Offerings</a></div>';
+
+  // A) RIGHT — wire form to a mailto draft
+  document.getElementById('contactForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var name = document.getElementById('cfName').value.trim();
+    var email = document.getElementById('cfEmail').value.trim();
+    var age = document.getElementById('cfAge').value.trim();
+    var msg = document.getElementById('cfMsg').value.trim();
+    var subject = 'Academy inquiry from ' + (name || 'a prospective family');
+    var body = 'Name: ' + name + '\n' +
+      'Email: ' + email + '\n' +
+      'Player age: ' + (age || 'n/a') + '\n\n' +
+      msg;
+    window.location.href = 'mailto:' + c.email +
+      '?subject=' + encodeURIComponent(subject) +
+      '&body=' + encodeURIComponent(body);
+  });
+
+  // Register links
+  document.getElementById('heroReg').href = S.bookUrl;
+  document.getElementById('ctaReg').href = S.bookUrl;
+})();
+</script>
+</body>
+</html>

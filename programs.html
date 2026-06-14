@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Programs — Camps, Clinics & Training · Small Town Sports Academy</title>
+<meta name="description" content="Baseball & softball camps and weekly clinics at Small Town Sports Academy in Stephenville, TX. Small-group, coach-led training for every age. Now enrolling." />
+<link rel="icon" href="assets/logo.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/site.css" />
+</head>
+<body data-page="programs">
+<div id="site-nav"></div>
+
+<!-- PAGE HERO -->
+<header class="phero">
+  <div class="bg"><img src="assets/img/cage.jpg" alt="" /></div>
+  <div class="wrap">
+    <nav class="breadcrumb"><a href="index.html">Home</a> / <span>Programs</span></nav>
+    <span class="kicker gold">Now Enrolling</span>
+    <h1>Camps, Clinics<br>&amp; <em>Training</em></h1>
+    <p class="lead">Small-group, coach-led sessions built around real reps and real development. Pick a program, register in a couple of taps, and get to work.</p>
+    <div class="btn-row"><a class="btn btn-gold" id="heroReg" href="#" target="_blank" rel="noopener">Register Now</a></div>
+  </div>
+</header>
+
+<!-- PROGRAM ROWS -->
+<section class="section">
+  <div class="wrap">
+    <div class="shead reveal">
+      <span class="kicker">This Season</span>
+      <h2>Programs running now</h2>
+      <p>Every session is small-group and coach-led. Hover a program for the details, then register straight through our booking page.</p>
+    </div>
+    <div class="progs reveal" id="progRows"></div>
+  </div>
+</section>
+
+<!-- WHAT TO EXPECT -->
+<section class="section dark">
+  <div class="wrap">
+    <div class="shead reveal">
+      <span class="kicker on-dark">The Difference</span>
+      <h2>What to expect</h2>
+      <p>We're a coaching academy, not a crowded drop-in cage. Here's what every program is built on.</p>
+    </div>
+    <div class="feat3 four reveal" id="expectGrid"></div>
+  </div>
+</section>
+
+<!-- PRO SHOP -->
+<section class="section">
+  <div class="wrap">
+    <div class="shead reveal">
+      <span class="kicker">Pro Shop</span>
+      <h2>Gear up on-site</h2>
+      <p>Bats, gloves, apparel and season essentials — available right at the academy. Three categories, fully stocked.</p>
+    </div>
+    <div class="shopgrid reveal" id="shopGrid"></div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section cta">
+  <div class="bg"><img src="assets/img/coach.jpg" alt="" /></div>
+  <div class="wrap reveal">
+    <span class="kicker on-dark" style="justify-content:center;display:inline-flex">Get Started</span>
+    <h2 style="margin-top:18px">Your first <em>rep</em><br>starts this week.</h2>
+    <p>Browse open camps and clinics and register in about two minutes.</p>
+    <div class="btn-row"><a class="btn btn-gold btn-lg" id="ctaReg" href="#" target="_blank" rel="noopener">Register Now</a>
+      <a class="btn btn-ghost-d btn-lg" href="memberships.html">View Memberships</a></div>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+
+<script src="js/config.js"></script>
+<script src="js/chrome.js"></script>
+<script>
+(function () {
+  var S = window.STSA, icon = window.icon;
+  var money = function (n) { return '$' + Number(n).toLocaleString(); };
+  var imgs = ['coach', 'cage', 'field'];
+
+  document.getElementById('progRows').innerHTML = S.programs.map(function (p, i) {
+    var alt = p.altPrice ? ' · ' + money(p.altPrice) + ' ' + (p.altNote || '') : '';
+    return '<a class="prow" href="' + p.url + '" target="_blank" rel="noopener">' +
+      '<div class="pbg"><img src="assets/img/' + imgs[i % imgs.length] + '.jpg" alt=""/></div>' +
+      '<span class="pnum">0' + (i + 1) + '</span>' +
+      '<div class="pmain"><div class="pname">' + p.name + '</div>' +
+        '<div class="pmeta"><b>' + p.cat + '</b><span>Ages ' + p.ages + '</span><span>' + p.sport + '</span><span>' + p.location + '</span></div>' +
+        '<div class="pdesc">' + (p.desc || p.tagline) + '</div></div>' +
+      '<div class="pright"><div class="pprice">' + money(p.price) + '<small>' + (p.priceNote || '') + alt + '</small></div>' +
+        '<span class="pgo">' + icon('arrow') + '</span></div></a>';
+  }).join('');
+
+  var expect = [
+    ['users', 'Small Groups', 'Real coaching attention — not a crowded line. Every rep gets watched and corrected.'],
+    ['target', 'Every Skill', 'Hitting, fielding, throwing, baserunning and game IQ — coached as a complete player.'],
+    ['trophy', 'Tracked Growth', 'Coaches who know your player and follow their development season to season.'],
+    ['calendar', 'On Your Schedule', 'Pay-per-session clinics, single-day camp options, and drop-in-friendly formats.']
+  ];
+  document.getElementById('expectGrid').innerHTML = expect.map(function (e, i) {
+    return '<div class="fcard"><span class="fnum">0' + (i + 1) + '</span><div class="fic">' + icon(e[0]) +
+      '</div><h3>' + e[1] + '</h3><p>' + e[2] + '</p></div>';
+  }).join('');
+
+  var shopIcons = { Clothing: 'star', Equipment: 'dumbbell', 'Season Startup': 'sparkle' };
+  document.getElementById('shopGrid').innerHTML = S.shop.map(function (c) {
+    return '<div class="shopcard"><span class="si">' + icon(shopIcons[c] || 'star') + '</span><h4>' + c + '</h4></div>';
+  }).join('');
+
+  document.getElementById('heroReg').href = S.bookUrl;
+  document.getElementById('ctaReg').href = S.bookUrl;
+})();
+</script>
+</body>
+</html>

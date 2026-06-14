@@ -1,0 +1,7 @@
+node_modules/
+.DS_Store
+.vercel
+.env
+.env.local
+# Internal raw data scraped from UpperHand (contains non-public membership/staff detail) — keep out of any public repo
+data/raw-upperhand/

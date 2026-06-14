@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Private Lessons — 1-on-1 & Small Group · Small Town Sports Academy</title>
+<meta name="description" content="Private and small-group baseball & softball lessons in Stephenville, TX. Hitting, pitching, fielding and more, one-on-one with Small Town Sports Academy's coaching staff." />
+<link rel="icon" href="assets/logo.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/site.css" />
+</head>
+<body data-page="lessons">
+<div id="site-nav"></div>
+
+<!-- PAGE HERO -->
+<header class="phero">
+  <div class="bg"><img src="assets/img/coach.jpg" alt="" /></div>
+  <div class="wrap">
+    <nav class="breadcrumb"><a href="index.html">Home</a> / <span>Lessons</span></nav>
+    <span class="kicker gold">1-on-1 &amp; Small Group</span>
+    <h1>Private <em>Lessons</em></h1>
+    <p class="lead">Focused, one-on-one coaching matched to your player and your schedule — the fastest way to fix a swing, build an arm, or get ready for the next level.</p>
+    <div class="btn-row"><a class="btn btn-gold" href="#inquire">Request a Lesson</a></div>
+  </div>
+</header>
+
+<!-- WHAT WE COACH -->
+<section class="section">
+  <div class="wrap">
+    <div class="shead reveal">
+      <span class="kicker">What We Coach</span>
+      <h2>Built around your player</h2>
+      <p>Every lesson is tailored — bring a specific skill to sharpen or a full-game tune-up. Here's where our coaches focus.</p>
+    </div>
+    <div class="feat3 four reveal" id="lessonTypes"></div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="section dark">
+  <div class="wrap">
+    <div class="shead reveal">
+      <span class="kicker on-dark">How It Works</span>
+      <h2>From hello to first lesson</h2>
+      <p>Lessons are arranged directly so we can match the right coach to your player. Here's the whole process.</p>
+    </div>
+    <div class="feat3 four reveal" id="lessonSteps"></div>
+  </div>
+</section>
+
+<!-- INSTRUCTORS -->
+<section class="section">
+  <div class="wrap">
+    <div class="shead reveal">
+      <span class="kicker">Your Coaches</span>
+      <h2>Trained by our staff</h2>
+      <p id="instrNote"></p>
+    </div>
+    <div class="cgrid reveal" id="instructorGrid"></div>
+  </div>
+</section>
+
+<!-- INQUIRE -->
+<section class="section dark" id="inquire">
+  <div class="wrap">
+    <div class="split2">
+      <div class="reveal">
+        <span class="kicker on-dark">Get Started</span>
+        <h2 style="color:var(--cream);font-size:clamp(2rem,4.4vw,3.4rem);margin-top:16px">Request a lesson</h2>
+        <p style="font-family:var(--font-body);color:rgba(245,242,234,.75);margin-top:18px;line-height:1.7;max-width:46ch">Tell us about your player and what you want to work on. We'll match you with a coach and go over times and rates — rates depend on the coach and format (1-on-1 or small group).</p>
+        <div style="margin-top:28px" id="inqContact"></div>
+      </div>
+      <form class="form reveal d1" id="lessonForm">
+        <label for="lfName">Player Name</label>
+        <input id="lfName" type="text" placeholder="First and last name" required />
+        <label for="lfAge">Player Age</label>
+        <input id="lfAge" type="text" placeholder="e.g. 11" />
+        <label for="lfFocus">Focus</label>
+        <select id="lfFocus">
+          <option>Hitting</option><option>Pitching</option><option>Fielding &amp; Catching</option>
+          <option>Speed &amp; Strength</option><option>Full-game tune-up</option><option>Not sure yet</option>
+        </select>
+        <label for="lfTimes">Preferred Days / Times</label>
+        <input id="lfTimes" type="text" placeholder="e.g. weekday evenings, Saturday mornings" />
+        <label for="lfMsg">Anything else?</label>
+        <textarea id="lfMsg" placeholder="Goals, position, what you'd like to work on…"></textarea>
+        <button type="submit" class="btn btn-gold">Send Request</button>
+        <div class="note">This opens your email app to send the request.</div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section cta">
+  <div class="bg"><img src="assets/img/cage.jpg" alt="" /></div>
+  <div class="wrap reveal">
+    <span class="kicker on-dark" style="justify-content:center;display:inline-flex">Ready When You Are</span>
+    <h2 style="margin-top:18px">Put in the <em>work.</em></h2>
+    <p>Request a lesson, or browse our camps, clinics and memberships.</p>
+    <div class="btn-row"><a class="btn btn-gold btn-lg" href="#inquire">Request a Lesson</a>
+      <a class="btn btn-ghost-d btn-lg" href="programs.html">See Programs</a></div>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+
+<script src="js/config.js"></script>
+<script src="js/chrome.js"></script>
+<script>
+(function () {
+  var S = window.STSA, icon = window.icon;
+
+  // Lesson focus areas
+  var types = [
+    ['target', 'Hitting', 'Swing mechanics, approach and timing — from tee work up to live at-bats.'],
+    ['ball', 'Pitching', 'Mechanics, command and arm care, built for the player\'s age and level.'],
+    ['users', 'Fielding & Catching', 'Footwork, glove work, receiving and accurate throws across every position.'],
+    ['dumbbell', 'Speed & Strength', 'Acceleration, agility and age-appropriate strength to play faster and stay healthy.']
+  ];
+  document.getElementById('lessonTypes').innerHTML = types.map(function (t, i) {
+    return '<div class="fcard"><span class="fnum">0' + (i + 1) + '</span><div class="fic">' + icon(t[0]) +
+      '</div><h3>' + t[1] + '</h3><p>' + t[2] + '</p></div>';
+  }).join('');
+
+  // Steps
+  var steps = [
+    ['Tell us your goals', 'Share your player\'s age, position and what you want to work on.'],
+    ['We match a coach', 'We pair you with an instructor who fits the skill — and the schedule.'],
+    ['Pick your times', 'One-on-one or small-group, on a cadence that works for your week.'],
+    ['Get to work', 'Show up, put in real reps, and track the progress session to session.']
+  ];
+  document.getElementById('lessonSteps').innerHTML = steps.map(function (s, i) {
+    return '<div class="fcard"><span class="fnum">0' + (i + 1) + '</span><h3>' + s[0] + '</h3><p>' + s[1] + '</p></div>';
+  }).join('');
+
+  // Instructors (leadership + named instructors)
+  document.getElementById('instrNote').textContent = S.coachNote;
+  var people = S.leadership.map(function (l) { return { name: l.name, role: l.role }; })
+    .concat(S.instructors.map(function (n) { return { name: n, role: 'Instructor' }; }));
+  document.getElementById('instructorGrid').innerHTML = people.map(function (c) {
+    var ini = c.name.split(' ').map(function (w) { return w[0]; }).join('').slice(0, 2).toUpperCase();
+    return '<article class="ccard"><div class="av">' + ini + '</div><h4>' + c.name + '</h4><div class="role">' + c.role + '</div></article>';
+  }).join('');
+
+  // Contact line under the inquiry copy
+  var c = S.contact;
+  document.getElementById('inqContact').innerHTML =
+    '<div class="inforow" style="border:none;padding:0"><div class="ii">' + icon('mail') + '</div>' +
+    '<div><h4 style="color:var(--cream)">Prefer email?</h4>' +
+    '<a href="mailto:' + c.email + '" style="color:var(--gold)">' + c.email + '</a></div></div>';
+
+  // Form -> mailto
+  document.getElementById('lessonForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var v = function (id) { return (document.getElementById(id).value || '').trim(); };
+    var name = v('lfName');
+    var subject = 'Private lesson inquiry — ' + (name || 'new player');
+    var body =
+      'Player name: ' + name + '\n' +
+      'Player age: ' + (v('lfAge') || 'n/a') + '\n' +
+      'Focus: ' + document.getElementById('lfFocus').value + '\n' +
+      'Preferred days/times: ' + (v('lfTimes') || 'n/a') + '\n\n' +
+      'Notes:\n' + v('lfMsg') + '\n';
+    window.location.href = 'mailto:' + c.email + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+  });
+})();
+</script>
+</body>
+</html>

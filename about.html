@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>About — Our Story · Small Town Sports Academy</title>
+<meta name="description" content="Founded in 2023 by Amanda Philips, Small Town Sports Academy is a family-run baseball & softball academy in Stephenville, TX and home of the Sox. Meet the people behind the reps." />
+<link rel="icon" href="assets/logo.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/site.css" />
+</head>
+<body data-page="about">
+<div id="site-nav"></div>
+
+<!-- PAGE HERO -->
+<header class="phero">
+  <div class="bg"><img src="assets/img/hero.jpg" alt="" /></div>
+  <div class="wrap">
+    <nav class="breadcrumb"><a href="index.html">Home</a> / <span>About</span></nav>
+    <span class="kicker gold">Our Story</span>
+    <h1>About The <em>Academy</em></h1>
+    <p class="lead">A family-run academy in Stephenville, Texas — built so every kid around here has a real place to train, grow, and fall in love with the game.</p>
+    <div class="btn-row"><a class="btn btn-gold" id="heroReg" href="#" target="_blank" rel="noopener">Register Now</a></div>
+  </div>
+</header>
+
+<!-- A) OUR STORY -->
+<section class="section">
+  <div class="wrap">
+    <div class="split2 reveal">
+      <div class="prose">
+        <span class="kicker">Our Story</span>
+        <h2 style="font-size:clamp(2rem,4.8vw,3.6rem);margin:16px 0 22px">Built in Stephenville,<br>for Stephenville.</h2>
+        <p>Small Town Sports Academy opened its doors in 2023, founded and run by Amanda Philips with a simple idea: small-town kids deserve big-league coaching without leaving home. What started as a place to get good reps in has grown into a year-round home for ballplayers of every age.</p>
+        <p>We're the home of the <strong>Sox</strong> — our competitive baseball and softball program — and we're proud to be family-run and small-town to the core. Around here, coaches know your kid by name, follow their swing season to season, and treat every player like one of our own.</p>
+        <p>We're also the sister organization to <strong>Small Town Select Tournaments</strong>, the tournament side of the same family. That connection gives our players a path to real competition — but make no mistake, the academy is where it all starts, one rep at a time.</p>
+      </div>
+      <div class="media-card">
+        <img src="assets/img/coach.jpg" alt="Coaching at a Small Town Sports Academy camp" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- B) WHAT WE BELIEVE -->
+<section class="section dark">
+  <div class="wrap">
+    <div class="shead reveal">
+      <span class="kicker on-dark">What We Believe</span>
+      <h2>Why we do this</h2>
+      <p>Four things we never compromise on — they show up in every camp, clinic, and team we run.</p>
+    </div>
+    <div class="feat3 four reveal" id="valGrid"></div>
+  </div>
+</section>
+
+<!-- C) STAT BAND -->
+<section class="section dark statband">
+  <div class="bg"><img src="assets/img/field.jpg" alt="" /></div>
+  <div class="wrap">
+    <div class="shead reveal" style="margin-bottom:0">
+      <span class="kicker on-dark">By The Numbers</span>
+      <h2>What we've built so far</h2>
+    </div>
+    <div class="stat-grid" id="statGrid"></div>
+  </div>
+</section>
+
+<!-- D) CTA -->
+<section class="section cta">
+  <div class="bg"><img src="assets/img/cage.jpg" alt="" /></div>
+  <div class="wrap reveal">
+    <span class="kicker on-dark" style="justify-content:center;display:inline-flex">Get Started</span>
+    <h2 style="margin-top:18px">Come be part of the <em>family</em>.</h2>
+    <p>Browse open camps and clinics and register in about two minutes — we'll see you at the cages.</p>
+    <div class="btn-row">
+      <a class="btn btn-gold btn-lg" id="ctaReg" href="#" target="_blank" rel="noopener">Register Now</a>
+      <a class="btn btn-ghost-d btn-lg" href="contact.html">Visit Us</a>
+    </div>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+
+<script src="js/config.js"></script>
+<script src="js/chrome.js"></script>
+<script>
+(function () {
+  var S = window.STSA, icon = window.icon;
+
+  // B) Values (.fcard grid)
+  document.getElementById('valGrid').innerHTML = S.values.map(function (v, i) {
+    return '<div class="fcard"><span class="fnum">0' + (i + 1) + '</span><div class="fic">' + icon(v.icon) +
+      '</div><h3>' + v.title + '</h3><p>' + v.text + '</p></div>';
+  }).join('');
+
+  // C) Stats (chrome.js animates [data-count])
+  document.getElementById('statGrid').innerHTML = S.stats.map(function (s) {
+    return '<div class="s reveal"><div class="n" data-count="' + s.n + '"' +
+      (s.raw ? ' data-raw="1"' : '') + (s.suffix ? ' data-suffix="' + s.suffix + '"' : '') + '>0</div>' +
+      '<div class="l">' + s.label + '</div></div>';
+  }).join('');
+
+  // Register links
+  document.getElementById('heroReg').href = S.bookUrl;
+  document.getElementById('ctaReg').href = S.bookUrl;
+})();
+</script>
+</body>
+</html>

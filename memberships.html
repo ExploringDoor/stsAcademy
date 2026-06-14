@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Memberships — Team & Family Plans · Small Town Sports Academy</title>
+<meta name="description" content="Season-long facility, coaching, and team plans at Small Town Sports Academy in Stephenville, TX. Monthly or full-season memberships for every age group. Enroll today." />
+<link rel="icon" href="assets/logo.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/site.css" />
+</head>
+<body data-page="memberships">
+<div id="site-nav"></div>
+
+<!-- PAGE HERO -->
+<header class="phero">
+  <div class="bg"><img src="assets/img/cage.jpg" alt="" /></div>
+  <div class="wrap">
+    <nav class="breadcrumb"><a href="index.html">Home</a> / <span>Memberships</span></nav>
+    <span class="kicker gold">Join</span>
+    <h1>Find Your<br><em>Plan</em></h1>
+    <p class="lead">Season-long access to our cages, turf, coaching and team play — billed monthly or paid once for the whole season. Pick the plan that fits your player.</p>
+    <div class="btn-row"><a class="btn btn-gold" id="heroReg" href="#" target="_blank" rel="noopener">Register Now</a></div>
+  </div>
+</header>
+
+<!-- A) PLANS -->
+<section class="section">
+  <div class="wrap">
+    <div class="shead reveal">
+      <span class="kicker">Plans</span>
+      <h2>Pick the plan that fits your season</h2>
+      <p id="planNote"></p>
+    </div>
+    <div id="memGroups"></div>
+  </div>
+</section>
+
+<!-- B) WHAT MEMBERSHIP UNLOCKS -->
+<section class="section dark">
+  <div class="wrap">
+    <div class="shead reveal">
+      <span class="kicker on-dark">Included</span>
+      <h2>What membership unlocks</h2>
+      <p>Every plan opens the doors to the academy. Team and season packages stack coaching and tournament play on top.</p>
+    </div>
+    <div class="feat3 four reveal" id="incGrid"></div>
+  </div>
+</section>
+
+<!-- C) HOW IT WORKS -->
+<section class="section">
+  <div class="wrap">
+    <div class="shead reveal">
+      <span class="kicker">Questions</span>
+      <h2>How it works</h2>
+      <p>The short version — and where to go when you're ready to sign up.</p>
+    </div>
+    <div class="faqlist reveal">
+      <div class="faq">
+        <h4>How do team memberships work?</h4>
+        <p>Team memberships are organized by age group, so your player trains and competes alongside teammates at their level. Each one is offered as a month-to-month plan or a single full-season package — pick whichever fits your family's budget and calendar.</p>
+      </div>
+      <div class="faq">
+        <h4>Can non-team families use the facility?</h4>
+        <p>Absolutely. The Public Family Membership gives non-Sox families full access to our cages, turf, and open training time — no team commitment required.</p>
+      </div>
+      <div class="faq">
+        <h4>How do I enroll?</h4>
+        <p>Every plan is enrolled and paid for on our booking page. Browse the live age-group options, choose monthly or full-season, and you're set in a couple of taps — <a id="faqBook" href="#" target="_blank" rel="noopener">enroll on our booking page</a>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- D) CTA -->
+<section class="section cta">
+  <div class="bg"><img src="assets/img/coach.jpg" alt="" /></div>
+  <div class="wrap reveal">
+    <span class="kicker on-dark" style="justify-content:center;display:inline-flex">Get Started</span>
+    <h2 style="margin-top:18px">Claim your <em>spot</em><br>for the season.</h2>
+    <p>Lock in cage time, coaching, and team play. Enrolling takes about two minutes.</p>
+    <div class="btn-row">
+      <a class="btn btn-gold btn-lg" id="ctaReg" href="#" target="_blank" rel="noopener">Register Now</a>
+      <a class="btn btn-ghost-d btn-lg" href="programs.html">Explore Programs</a>
+    </div>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+
+<script src="js/config.js"></script>
+<script src="js/chrome.js"></script>
+<script>
+(function () {
+  var S = window.STSA, icon = window.icon;
+  var money = function (n) { return '$' + Number(n).toLocaleString(); };
+
+  // Intro note
+  document.getElementById('planNote').textContent = S.membershipNote;
+
+  // A) Membership groups → mgroups of plan cards
+  document.getElementById('memGroups').innerHTML = S.membershipGroups.map(function (g) {
+    var cards = g.plans.map(function (p) {
+      return '<div class="mcard' + (p.highlight ? ' hot' : '') + '">' +
+        (p.highlight ? '<span class="pop">Popular</span>' : '') +
+        '<h4>' + p.name + '</h4>' +
+        '<div class="mp">' + money(p.price) + '<span class="per"> / ' + p.per + '</span></div>' +
+        '<p>' + p.desc + '</p>' +
+        '<a class="btn btn-ghost" href="' + S.bookUrl + '" target="_blank" rel="noopener">Enroll ' + icon('arrow') + '</a>' +
+      '</div>';
+    }).join('');
+    return '<div class="mgroup reveal">' +
+      '<div class="mgroup-head"><h3>' + g.group + '</h3><p>' + g.blurb + '</p></div>' +
+      '<div class="mgrid">' + cards + '</div>' +
+    '</div>';
+  }).join('');
+
+  // B) What membership unlocks
+  var inc = [
+    ['dumbbell', 'Unlimited Facility', 'Cages, training turf and open work time — your membership opens the doors all season long.'],
+    ['users', 'Coaching Included', 'Team plans bundle our coaching staff right in, so every rep gets watched and corrected.'],
+    ['trophy', 'Tournament Play', 'All-inclusive plans cover up to 10 tournament fees — competitive game reps, none of the surprise costs.'],
+    ['calendar', 'Flexible Billing', 'Pay month-to-month or lock in the full season up front for the best value. Your call.']
+  ];
+  document.getElementById('incGrid').innerHTML = inc.map(function (e, i) {
+    return '<div class="fcard"><span class="fnum">0' + (i + 1) + '</span><div class="fic">' + icon(e[0]) +
+      '</div><h3>' + e[1] + '</h3><p>' + e[2] + '</p></div>';
+  }).join('');
+
+  // Register / enroll links
+  document.getElementById('heroReg').href = S.bookUrl;
+  document.getElementById('ctaReg').href = S.bookUrl;
+  document.getElementById('faqBook').href = S.bookUrl;
+})();
+</script>
+</body>
+</html>

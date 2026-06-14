@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Facility — Cages, Turf & Fields · Small Town Sports Academy</title>
+<meta name="description" content="Three training places, all in Stephenville, TX — indoor batting cages, training turf, and game-ready outdoor fields. Train year-round at Small Town Sports Academy." />
+<link rel="icon" href="assets/logo.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/site.css" />
+</head>
+<body data-page="facility">
+<div id="site-nav"></div>
+
+<!-- PAGE HERO -->
+<header class="phero">
+  <div class="bg"><img src="assets/img/field.jpg" alt="" /></div>
+  <div class="wrap">
+    <nav class="breadcrumb"><a href="index.html">Home</a> / <span>Facility</span></nav>
+    <span class="kicker gold">Where We Train</span>
+    <h1>Three Places To <em>Train</em></h1>
+    <p class="lead">Indoor cages and training turf under one roof, plus game-ready outdoor fields a few steps away — every one of them right here in Stephenville. When the Texas weather turns, the reps don't stop.</p>
+    <div class="btn-row"><a class="btn btn-gold" id="heroReg" href="#" target="_blank" rel="noopener">Register Now</a></div>
+  </div>
+</header>
+
+<!-- A) THE FACILITIES -->
+<section class="section">
+  <div class="wrap">
+    <div class="shead reveal">
+      <span class="kicker">The Facilities</span>
+      <h2>All in Stephenville</h2>
+      <p>One academy, three training grounds — a home indoor facility, our outdoor fields, and a west-side spot for extra cage time. All a short drive apart, all built for real work.</p>
+    </div>
+    <div class="feat3 reveal" id="facGrid"></div>
+  </div>
+</section>
+
+<!-- B) FIND US -->
+<section class="section">
+  <div class="wrap">
+    <div class="shead reveal">
+      <span class="kicker">Find Us</span>
+      <h2>Get directions</h2>
+      <p>Drop us a pin and roll in. Our main indoor facility is the front door to everything we do.</p>
+    </div>
+    <div class="split2 reveal">
+      <div class="mapframe">
+        <iframe id="facMap" src="" loading="lazy" title="Map to Small Town Sports Academy"></iframe>
+      </div>
+      <div>
+        <div class="inforow">
+          <span class="ii" id="addrIcon"></span>
+          <div>
+            <h4>Visit The Academy</h4>
+            <p id="facAddress"></p>
+          </div>
+        </div>
+        <div class="btn-row" style="margin-top:28px">
+          <a class="btn btn-ghost" id="dirLink" href="#" target="_blank" rel="noopener">Get Directions</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- C) YEAR-ROUND -->
+<section class="section dark">
+  <div class="wrap">
+    <div class="shead reveal">
+      <span class="kicker on-dark">Year-Round</span>
+      <h2>Texas weather never stops your reps</h2>
+      <p>Rain, heat, or cold — our indoor cages and turf keep development on schedule all four seasons. Walk in, warm up, and get to work.</p>
+    </div>
+    <div class="feat3 reveal" id="yearGrid"></div>
+  </div>
+</section>
+
+<!-- D) CTA -->
+<section class="section cta">
+  <div class="bg"><img src="assets/img/cage.jpg" alt="" /></div>
+  <div class="wrap reveal">
+    <span class="kicker on-dark" style="justify-content:center;display:inline-flex">Get Started</span>
+    <h2 style="margin-top:18px">Come see <em>the place</em><br>for yourself.</h2>
+    <p>Book a session, swing by the cages, and find out why Stephenville families train here. Registration takes about two minutes.</p>
+    <div class="btn-row"><a class="btn btn-gold btn-lg" id="ctaReg" href="#" target="_blank" rel="noopener">Register Now</a>
+      <a class="btn btn-ghost-d btn-lg" href="programs.html">Browse Programs</a></div>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+
+<script src="js/config.js"></script>
+<script src="js/chrome.js"></script>
+<script>
+(function () {
+  var S = window.STSA, icon = window.icon;
+
+  // A) Facilities grid — one card per location
+  document.getElementById('facGrid').innerHTML = S.locations.map(function (l, i) {
+    return '<div class="fcard"><span class="fnum">0' + (i + 1) + '</span>' +
+      '<div class="fic">' + icon('pin') + '</div>' +
+      '<h3>' + l.name + '</h3>' +
+      '<p><b>' + l.role + '</b> · ' + l.addr + '</p>' +
+      '<p>' + (l.amenities || []).join(' · ') + '</p></div>';
+  }).join('');
+
+  // B) Find Us — address + map pin icon + map/directions from config
+  var addr = S.contact.address;
+  document.getElementById('addrIcon').innerHTML = icon('pin');
+  document.getElementById('facAddress').textContent = addr;
+  document.getElementById('facMap').src =
+    'https://maps.google.com/maps?q=' + encodeURIComponent(addr) + '&z=14&output=embed';
+  document.getElementById('dirLink').href =
+    'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(addr);
+
+  // C) Year-round feat3
+  var year = [
+    ['home', 'Indoor Batting Cages', 'Full cages under roof so a swing session is never rained out. Tee work, front-toss, and machine reps any day of the year.'],
+    ['target', 'Training Turf', 'Open turf for fielding, throwing, and live work — clean footing and game-realistic reps without stepping outside.'],
+    ['sparkle', 'Climate Controlled', 'Comfortable in the August heat and the January cold. All-weather space means consistent development, every single month.']
+  ];
+  document.getElementById('yearGrid').innerHTML = year.map(function (y, i) {
+    return '<div class="fcard"><span class="fnum">0' + (i + 1) + '</span>' +
+      '<div class="fic">' + icon(y[0]) + '</div>' +
+      '<h3>' + y[1] + '</h3><p>' + y[2] + '</p></div>';
+  }).join('');
+
+  // Register links
+  document.getElementById('heroReg').href = S.bookUrl;
+  document.getElementById('ctaReg').href = S.bookUrl;
+})();
+</script>
+</body>
+</html>

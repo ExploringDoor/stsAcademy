@@ -1,0 +1,160 @@
+{
+  "generatedAt": "2026-06-12",
+  "note": "Offline fallback snapshot. The live page fetches fresh data from UpperHand on load.",
+  "sessions": [
+    {
+      "eventId": 196663,
+      "title": "Monday Night Skills Clinic",
+      "url": "https://app.upperhand.io/customers/1830-small-town-sports-academy/events/196663-monday-night-skills-clinic",
+      "price": 2000,
+      "singlePrice": 2000,
+      "start": "2026-06-01T22:30:00.000Z",
+      "end": "2026-06-01T23:30:00.000Z",
+      "spots": 994,
+      "status": "standard"
+    },
+    {
+      "eventId": 196663,
+      "title": "Monday Night Skills Clinic",
+      "url": "https://app.upperhand.io/customers/1830-small-town-sports-academy/events/196663-monday-night-skills-clinic",
+      "price": 2000,
+      "singlePrice": 2000,
+      "start": "2026-06-02T00:00:00.000Z",
+      "end": "2026-06-02T01:00:00.000Z",
+      "spots": 991,
+      "status": "standard"
+    },
+    {
+      "eventId": 196663,
+      "title": "Monday Night Skills Clinic",
+      "url": "https://app.upperhand.io/customers/1830-small-town-sports-academy/events/196663-monday-night-skills-clinic",
+      "price": 2000,
+      "singlePrice": 2000,
+      "start": "2026-06-08T22:30:00.000Z",
+      "end": "2026-06-08T23:30:00.000Z",
+      "spots": 992,
+      "status": "standard"
+    },
+    {
+      "eventId": 196663,
+      "title": "Monday Night Skills Clinic",
+      "url": "https://app.upperhand.io/customers/1830-small-town-sports-academy/events/196663-monday-night-skills-clinic",
+      "price": 2000,
+      "singlePrice": 2000,
+      "start": "2026-06-09T00:00:00.000Z",
+      "end": "2026-06-09T01:00:00.000Z",
+      "spots": 991,
+      "status": "standard"
+    },
+    {
+      "eventId": 196663,
+      "title": "Monday Night Skills Clinic",
+      "url": "https://app.upperhand.io/customers/1830-small-town-sports-academy/events/196663-monday-night-skills-clinic",
+      "price": 2000,
+      "singlePrice": 2000,
+      "start": "2026-06-15T22:30:00.000Z",
+      "end": "2026-06-15T23:30:00.000Z",
+      "spots": 996,
+      "status": "standard"
+    },
+    {
+      "eventId": 196663,
+      "title": "Monday Night Skills Clinic",
+      "url": "https://app.upperhand.io/customers/1830-small-town-sports-academy/events/196663-monday-night-skills-clinic",
+      "price": 2000,
+      "singlePrice": 2000,
+      "start": "2026-06-16T00:00:00.000Z",
+      "end": "2026-06-16T01:00:00.000Z",
+      "spots": 996,
+      "status": "standard"
+    },
+    {
+      "eventId": 196663,
+      "title": "Monday Night Skills Clinic",
+      "url": "https://app.upperhand.io/customers/1830-small-town-sports-academy/events/196663-monday-night-skills-clinic",
+      "price": 2000,
+      "singlePrice": 2000,
+      "start": "2026-06-22T22:30:00.000Z",
+      "end": "2026-06-22T23:30:00.000Z",
+      "spots": 996,
+      "status": "standard"
+    },
+    {
+      "eventId": 196663,
+      "title": "Monday Night Skills Clinic",
+      "url": "https://app.upperhand.io/customers/1830-small-town-sports-academy/events/196663-monday-night-skills-clinic",
+      "price": 2000,
+      "singlePrice": 2000,
+      "start": "2026-06-23T00:00:00.000Z",
+      "end": "2026-06-23T01:00:00.000Z",
+      "spots": 997,
+      "status": "standard"
+    },
+    {
+      "eventId": 196661,
+      "title": "Grand Slam Baseball Camp",
+      "url": "https://app.upperhand.io/customers/1830-small-town-sports-academy/events/196661-grand-slam-baseball-camp",
+      "price": 7500,
+      "singlePrice": 4000,
+      "start": "2026-06-23T14:00:00.000Z",
+      "end": "2026-06-23T16:30:00.000Z",
+      "spots": 996,
+      "status": "standard"
+    },
+    {
+      "eventId": 196661,
+      "title": "Grand Slam Baseball Camp",
+      "url": "https://app.upperhand.io/customers/1830-small-town-sports-academy/events/196661-grand-slam-baseball-camp",
+      "price": 7500,
+      "singlePrice": 4000,
+      "start": "2026-06-24T14:00:00.000Z",
+      "end": "2026-06-24T16:30:00.000Z",
+      "spots": 996,
+      "status": "standard"
+    },
+    {
+      "eventId": 196661,
+      "title": "Grand Slam Baseball Camp",
+      "url": "https://app.upperhand.io/customers/1830-small-town-sports-academy/events/196661-grand-slam-baseball-camp",
+      "price": 7500,
+      "singlePrice": 4000,
+      "start": "2026-06-25T14:00:00.000Z",
+      "end": "2026-06-25T16:30:00.000Z",
+      "spots": 996,
+      "status": "standard"
+    },
+    {
+      "eventId": 196663,
+      "title": "Monday Night Skills Clinic",
+      "url": "https://app.upperhand.io/customers/1830-small-town-sports-academy/events/196663-monday-night-skills-clinic",
+      "price": 2000,
+      "singlePrice": 2000,
+      "start": "2026-06-29T22:30:00.000Z",
+      "end": "2026-06-29T23:30:00.000Z",
+      "spots": 995,
+      "status": "standard"
+    },
+    {
+      "eventId": 196663,
+      "title": "Monday Night Skills Clinic",
+      "url": "https://app.upperhand.io/customers/1830-small-town-sports-academy/events/196663-monday-night-skills-clinic",
+      "price": 2000,
+      "singlePrice": 2000,
+      "start": "2026-06-30T00:00:00.000Z",
+      "end": "2026-06-30T01:00:00.000Z",
+      "spots": 996,
+      "status": "standard"
+    },
+    {
+      "eventId": 196662,
+      "title": "Tryout Prep Camp",
+      "url": "https://app.upperhand.io/customers/1830-small-town-sports-academy/events/196662-tryout-prep-camp",
+      "price": 3000,
+      "singlePrice": null,
+      "start": "2026-06-30T22:30:00.000Z",
+      "end": "2026-07-01T00:30:00.000Z",
+      "spots": 995,
+      "status": "standard"
+    }
+  ]
+}

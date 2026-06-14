@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Coaches &amp; Staff — The People Behind the Academy · Small Town Sports Academy</title>
+<meta name="description" content="Meet the coaches and staff at Small Town Sports Academy in Stephenville, TX. A family-run academy backed by a 50+ member coaching staff who know your kid by name." />
+<link rel="icon" href="assets/logo.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/site.css" />
+</head>
+<body data-page="coaches">
+<div id="site-nav"></div>
+
+<!-- PAGE HERO -->
+<header class="phero">
+  <div class="bg"><img src="assets/img/coach.jpg" alt="" /></div>
+  <div class="wrap">
+    <nav class="breadcrumb"><a href="index.html">Home</a> / <span>Coaches</span></nav>
+    <span class="kicker gold">The Staff</span>
+    <h1>Coaches &amp; <em>Staff</em></h1>
+    <p class="lead">Coaches who learn your kid's name, their swing, and exactly where they're headed next. Small-town people, big-league standards — and they're in your corner from the very first rep.</p>
+    <div class="btn-row"><a class="btn btn-gold" id="heroReg" href="#" target="_blank" rel="noopener">Register Now</a></div>
+  </div>
+</header>
+
+<!-- A) LEADERSHIP -->
+<section class="section">
+  <div class="wrap">
+    <div class="shead reveal">
+      <span class="kicker">Leadership</span>
+      <h2>The people behind the academy</h2>
+    </div>
+    <div class="cgrid lead-grid reveal" id="leadGrid"></div>
+  </div>
+</section>
+
+<!-- B) COACHING STAFF -->
+<section class="section">
+  <div class="wrap">
+    <div class="shead reveal">
+      <span class="kicker">Coaching Staff</span>
+      <h2>Meet the instructors</h2>
+      <p id="coachNote"></p>
+    </div>
+    <div class="cgrid reveal" id="coachGrid"></div>
+  </div>
+</section>
+
+<!-- C) HOW WE COACH -->
+<section class="section dark">
+  <div class="wrap">
+    <div class="shead reveal">
+      <span class="kicker on-dark">How We Coach</span>
+      <h2>Our approach</h2>
+    </div>
+    <div class="feat3 reveal" id="approachGrid"></div>
+  </div>
+</section>
+
+<!-- D) CTA -->
+<section class="section cta">
+  <div class="bg"><img src="assets/img/cage.jpg" alt="" /></div>
+  <div class="wrap reveal">
+    <span class="kicker on-dark" style="justify-content:center;display:inline-flex">Train With Us</span>
+    <h2 style="margin-top:18px">Put your reps in the<br>hands of <em>real</em> coaches.</h2>
+    <p>Pick a camp or clinic and get our staff watching every swing. Registration takes about two minutes.</p>
+    <div class="btn-row"><a class="btn btn-gold btn-lg" id="ctaReg" href="#" target="_blank" rel="noopener">Register Now</a>
+      <a class="btn btn-ghost-d btn-lg" href="programs.html">View Programs</a></div>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+
+<script src="js/config.js"></script>
+<script src="js/chrome.js"></script>
+<script>
+(function () {
+  var S = window.STSA, icon = window.icon;
+
+  // Initials from a name (max 2, uppercase)
+  function initials(name) {
+    return (name || '').trim().split(/\s+/).slice(0, 2)
+      .map(function (w) { return w.charAt(0); }).join('').toUpperCase();
+  }
+
+  // A) Leadership grid
+  document.getElementById('leadGrid').innerHTML = (S.leadership || []).map(function (p) {
+    return '<div class="ccard">' +
+      '<div class="av">' + initials(p.name) + '</div>' +
+      '<h4>' + p.name + '</h4>' +
+      '<div class="role">' + p.role + '</div>' +
+      '<p>' + p.bio + '</p>' +
+    '</div>';
+  }).join('');
+
+  // B) Instructor grid (no bio)
+  document.getElementById('coachNote').textContent = S.coachNote;
+  document.getElementById('coachGrid').innerHTML = (S.instructors || []).map(function (name) {
+    return '<div class="ccard">' +
+      '<div class="av">' + initials(name) + '</div>' +
+      '<h4>' + name + '</h4>' +
+      '<div class="role">Instructor</div>' +
+    '</div>';
+  }).join('');
+
+  // C) Approach feat3
+  var approach = [
+    ['users', 'Small Groups', 'Every player trains in a small group, not a crowded drop-in line. More eyes on your kid means every rep gets watched and corrected.'],
+    ['target', 'Real Reps, Tracked Growth', 'High-rep, all-skills work from coaches who follow your player season to season — and actually remember where they left off.'],
+    ['trophy', 'A Path For Every Player', 'From first-time coach-pitch to high-school showcase, our staff points each kid to the next step that fits where they are.']
+  ];
+  document.getElementById('approachGrid').innerHTML = approach.map(function (a, i) {
+    return '<div class="fcard"><span class="fnum">0' + (i + 1) + '</span><div class="fic">' + icon(a[0]) +
+      '</div><h3>' + a[1] + '</h3><p>' + a[2] + '</p></div>';
+  }).join('');
+
+  // Register links
+  document.getElementById('heroReg').href = S.bookUrl;
+  document.getElementById('ctaReg').href = S.bookUrl;
+})();
+</script>
+</body>
+</html>

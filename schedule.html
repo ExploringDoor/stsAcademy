@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Schedule — Camps & Clinics · Small Town Sports Academy</title>
+<meta name="description" content="Upcoming baseball & softball camps and clinics at Small Town Sports Academy in Stephenville, TX. Live session times, pulled straight from our booking system." />
+<link rel="icon" href="assets/logo.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/site.css" />
+</head>
+<body data-page="schedule">
+<div id="site-nav"></div>
+
+<!-- PAGE HERO -->
+<header class="phero">
+  <div class="bg"><img src="assets/img/cage.jpg" alt="" /></div>
+  <div class="wrap">
+    <nav class="breadcrumb"><a href="index.html">Home</a> / <span>Schedule</span></nav>
+    <span class="kicker gold">What's On</span>
+    <h1>Class &amp; Camp<br><em>Schedule</em></h1>
+    <p class="lead">Every upcoming camp and clinic session, pulled live from our booking system. Pick a time, register, and we'll see you at the cages.</p>
+    <div class="btn-row"><a class="btn btn-gold" id="heroReg" href="#" target="_blank" rel="noopener">Browse All Offerings</a></div>
+  </div>
+</header>
+
+<!-- SCHEDULE -->
+<section class="section">
+  <div class="wrap sched-wrap">
+    <div class="shead">
+      <span class="kicker">Upcoming</span>
+      <h2>Sessions on the calendar</h2>
+      <p>Click any session to register on UpperHand. New camps and clinics appear here automatically the moment they open.</p>
+    </div>
+    <div class="sched-meta" id="scheduleMeta"></div>
+    <div id="scheduleMount"></div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section cta">
+  <div class="bg"><img src="assets/img/coach.jpg" alt="" /></div>
+  <div class="wrap reveal">
+    <span class="kicker on-dark" style="justify-content:center;display:inline-flex">Don't see a fit?</span>
+    <h2 style="margin-top:18px">Ask about <em>private</em><br>lessons.</h2>
+    <p>One-on-one and small-group training with our coaching staff, on a schedule that works for you.</p>
+    <div class="btn-row"><a class="btn btn-gold btn-lg" href="lessons.html">Private Lessons</a>
+      <a class="btn btn-ghost-d btn-lg" id="ctaReg" href="#" target="_blank" rel="noopener">All Offerings</a></div>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+
+<script src="js/config.js"></script>
+<script src="js/chrome.js"></script>
+<script src="js/schedule.js"></script>
+<script>
+(function () {
+  var S = window.STSA;
+  var a = document.getElementById('heroReg'); if (a) a.href = S.bookUrl;
+  var b = document.getElementById('ctaReg'); if (b) b.href = S.bookUrl;
+})();
+</script>
+</body>
+</html>
