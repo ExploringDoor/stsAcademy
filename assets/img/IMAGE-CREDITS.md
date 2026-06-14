@@ -10,9 +10,8 @@ the academy) — no third-party attribution required:
 | `coach.jpg` | Coaching huddle with young players (coaches page, about, home) |
 | `field.jpg` | The team in the indoor facility (facility/contact backgrounds) |
 
-`banner.jpg` is an AI-generated branded banner graphic (logo on a banner in the gym). It is
-**staged but not yet placed** on the site, pending a decision on where to use it and a fix to
-its baked-in "EST. 2024" text (the site currently says Est. 2023).
+`banner.jpg` is an AI-generated branded banner graphic (logo on a banner in the gym, "Est. 2023").
+It's featured as a full-width branded band on the home page, above the final call-to-action.
 
 The earlier stock placeholders (Wikimedia Commons) have all been replaced — nothing on the site
 requires attribution anymore.

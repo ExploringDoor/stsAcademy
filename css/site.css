@@ -426,6 +426,10 @@ body::after {
   .mgroup-head { flex-direction: column; align-items: flex-start; gap: 8px; }
 }
 
+/* ═══════════════ BRAND BANNER BAND ═══════════════ */
+.brandband { background: linear-gradient(180deg, var(--ink), var(--ink-2)); padding: clamp(44px,6vw,88px) var(--pad); text-align: center; }
+.brandband img { display: block; max-width: 1080px; width: 100%; height: auto; margin-inline: auto; border-radius: 8px; box-shadow: 0 30px 70px rgba(0,0,0,.5); }
+
 /* ═══════════════ SCHEDULE ═══════════════ */
 .sched-wrap { max-width: 980px; }
 .sched-meta { display: flex; flex-wrap: wrap; gap: 12px 26px; align-items: center; margin-bottom: 40px; font-family: var(--font-cond); text-transform: uppercase; letter-spacing: .08em; font-size: .72rem; color: var(--muted); }
