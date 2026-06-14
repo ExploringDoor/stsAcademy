@@ -1,17 +1,18 @@
 # Photo credits
 
-These are **placeholder** photos from Wikimedia Commons (real baseball photography, not AI),
-intended to be swapped for the academy's own photos of its facility, players, and coaches.
+The four photos used across the site are **Small Town Sports Academy's own** (provided by
+the academy) — no third-party attribution required:
 
-| File | Source (Wikimedia Commons) | License | Attribution required? |
-|------|----------------------------|---------|-----------------------|
-| `hero.jpg`  | "Air Force vs. Fresno State, throwing heat" | Public Domain | No |
-| `coach.jpg` | "USMC-090717-M-1298M-130" (youth baseball camp) | Public Domain | No |
-| `cage.jpg`  | "10th Annual Far East All-Stars and Scouting Combine, CFAY" | Public Domain | No |
-| `field.jpg` | "Grand Canyon University Practice Baseball Field, Phoenix AZ" (panoramio) | **CC BY 3.0** | **Yes** |
+| File | What it is |
+|------|-----------|
+| `hero.jpg`  | Coach working with players on the indoor turf (home + about hero) |
+| `cage.jpg`  | Players hitting in the batting cages (programs/schedule/membership backgrounds) |
+| `coach.jpg` | Coaching huddle with young players (coaches page, about, home) |
+| `field.jpg` | The team in the indoor facility (facility/contact backgrounds) |
 
-**If you keep `field.jpg`**, CC BY 3.0 requires crediting the original photographer — see the file
-page on Wikimedia Commons. The simplest fix is to replace it with a photo of your own field, which
-removes the attribution requirement entirely.
+`banner.jpg` is an AI-generated branded banner graphic (logo on a banner in the gym). It is
+**staged but not yet placed** on the site, pending a decision on where to use it and a fix to
+its baked-in "EST. 2024" text (the site currently says Est. 2023).
 
-All four are real photographs and free for commercial use under the licenses above.
+The earlier stock placeholders (Wikimedia Commons) have all been replaced — nothing on the site
+requires attribution anymore.
